@@ -7,6 +7,7 @@ I am a scientist, not a programmer. But I do spend a significant amount of time 
 git really helped me. That being said, I don't need to use all the features of git, and I suspect that most non programmers don't
 need to either.
 
+
 Below are the main commands I have found useful. I'll assume that you have already used git, and can use its basic functionnalities:
 
 ## commit vs commit -a
