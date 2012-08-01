@@ -44,13 +44,13 @@ git commit -m "this will only commit the changes on foo"
 
 And:
 
-``` console
+``` ruby
 git commit -am "this will commit both foo and bar"
 ```
 
 Note that doing:
 
-``` console
+``` bash
 git add foo
 git add bar
 git commit -m "this will commit both foo and bar"
