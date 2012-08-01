@@ -1,3 +1,7 @@
+---
+title: Guillaume Basse
+---
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -33,9 +37,20 @@
 
 <p>I'm currently pursuing a master's degree in Statistics at Harvard University. I got my BS in engineering / applied maths from Ecole Centrale Paris in France. I'm a decent programmer, a decent mathematician, but a terrible engineer: don't ask me to build a bridge, I would not know where to start.</p>
 
+
 <h3>Open Projects</h3>
 
-<p>I currently have only one non work-related project: a code generator for generic gibbs samplers in R. It is still in early development, but will be pushed to github soon.</p>
+<ul>
+  <li> <a href="https://github.com/gwb/myRUtils"> myRUtils </a> : a
+  growing set of utilities for R </li>
+</ul>
+
+<h3>Articles</h3>
+<ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
         </section>
 
         <footer>
