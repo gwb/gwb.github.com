@@ -44,7 +44,7 @@ git commit -m "this will only commit the changes on foo"
 
 And:
 
-``` ruby
+```ruby
 git commit -am "this will commit both foo and bar"
 ```
 
