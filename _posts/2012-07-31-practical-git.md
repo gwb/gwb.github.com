@@ -20,7 +20,7 @@ Suppose you have 3 files in your directory: foo, bar, bli.
 
 You create your repo:
 
-```console
+``` console
 git init
 git add foo bar
 git commit -m "Initial commit"
@@ -30,27 +30,27 @@ Nothing fancy: git is now tracking two files.
 
 Now let's modify both files:
 
-```console
+``` console
 echo "a" >> foo
 echo "a" >> bar
 ```
 
 Now see the difference:
 
-```console
+``` console
 git add foo
 git commit -m "this will only commit the changes on foo"
 ```
 
 And:
 
-```console
+``` console
 git commit -am "this will commit both foo and bar"
 ```
 
 Note that doing:
 
-```console
+``` console
 git add foo
 git add bar
 git commit -m "this will commit both foo and bar"
