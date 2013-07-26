@@ -150,5 +150,42 @@ is naturally equivalent to using __commit -a__
 
 ## branching, branching, branching
 
+Branching is as easy as typing
+
+{% highlight bash %}
+git branch myNewBranch
+git checkout myNewBranch
+{% endhighlight %}
+
+The first line above creates a new branch _myNewBranch_, 
+and the second switches to this branch. Note that there
+is always at least one branch: the branch called _master_.
+
+What are branches used for? Imagine you have a project, and
+you want to add a new feature to your project, call it _feature 1_.
+You know that this will involve deep changes of the code, and
+you don't want to mess up your working code, especially if you
+don't know how long it's gonna take to implement you new feature.
+
+That's a typical use case for branches. the worklow is the
+following: 
+
+{% highlight bash %}
+git branch feature1
+git checkout feature1
+< .. do some stuff ..>
+< .. do some commits ..>
+git checkout master
+git merge feature1
+git branch -d feature1
+{% endhighlight %}
+
+The first two lines we already know: we create a new branch
+and switch to it. We then make some changes, commit them, make
+some more changes and commit them again. Now we're satisfied
+with our new feature and we want to integrate it to the main branch.
+The _merge_ command does exactly that. Once the branch is merged to 
+the master, we no longer need it, and so we delete it with _branch -d_.
+
 coming soon
 
