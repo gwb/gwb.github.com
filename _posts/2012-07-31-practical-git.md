@@ -187,5 +187,70 @@ with our new feature and we want to integrate it to the main branch.
 The _merge_ command does exactly that. Once the branch is merged to 
 the master, we no longer need it, and so we delete it with _branch -d_.
 
-coming soon
+## What's change since the last commit? -- git diff
+
+There are two things that you might want to know before committing 
+some changes:
+
+1) What are the things that got modified since the last commit, and that
+are about to be committed (ie, are staged for commit)?
+
+You can get this information with:
+
+{% highlight bash %}
+git diff --staged # or git diff --cached
+{% endhighlight %}
+
+2) What are the things that got modified since the last commit, and that 
+are not included in the next commit (unstaged)
+
+That's an even shorter command:
+
+{% highlight bash %}
+git diff 
+{% endhighlight %}
+
+
+## Removing files from git
+
+Here again, you might want one of two things:
+
+1) completely remove the file from your system, and untrack it
+
+{% highlight bash %}
+git rm <file to remove>
+{% endhighlight %}
+
+2) keep the file on you system, but ask git to stop tracking it
+
+{% highlight bash %}
+git rm --cached <file to remove>
+{% endhighlight %}
+
+
+## Undoing things
+
+There are a number of ways to undo things, or modify things. 
+
+Say you committed something, and realize you forgot to include
+a file in the commit. You can fix that:
+
+{% highlight bash %}
+git add forgottenFile.txt
+git commit --amend -m "new commit message replacing old one"
+{% endhighlight %}
+
+Note that you don't need to add a commit message when you amend
+a commit.
+
+Now another scenario. Say you made modifications to a file, staged
+it for commit, but realize that your modifications suck, and that
+you want to keep the previously committed version.
+
+{% highlight bash %}
+git reset HEAD badmodif.txt # first you need to unstage file
+git checkout badmodif.txt # then you retrieve the file as it was in last commit
+{% endhighlight %}
+
+coming soon..
 
