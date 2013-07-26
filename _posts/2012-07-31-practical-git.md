@@ -254,3 +254,6 @@ git checkout badmodif.txt # then you retrieve the file as it was in last commit
 
 coming soon..
 
+References:
+- Git for scientists - <http://gureckislab.org/pages/GitTutorial/>
+- Pro Git - <http://git-scm.com/book>
