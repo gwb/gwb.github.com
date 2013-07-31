@@ -252,7 +252,56 @@ git reset HEAD badmodif.txt # first you need to unstage file
 git checkout badmodif.txt # then you retrieve the file as it was in last commit
 {% endhighlight %}
 
-coming soon..
+
+
+## workflow case studies
+
+Imagine you have two branches:
+
+- master
+
+- feature_1
+
+and that you're currently working in the *feature_1* branch. You've modified
+the file *foo.py* and added the file *bar.py* when you realize that there's
+a bug in the *baz.py* that affects your *foo.py*. You want to fix this asap.
+How do you do it?
+
+Step 1) commit the addition of file *bar.py*
+
+{% highlight bash %}
+git commit -m "blablabla message"
+{% endhighlight %}
+
+Step 2) stash the modifications on file *foo.py* so you can switch to *master*
+
+{% highlight bash %}
+git stash
+{% endhighlight %}
+
+Step 3) create a new branch, fix the bug, and merge the branch back to master
+
+{% highlight bash %}
+git branch hotfix
+git checkout hotfix
+<.... fix problem in baz.py ...>
+git commit -am "Fixed issue"
+git checkout master
+git merge hotfix
+git branch -d hotfix
+{% endhighlight %}
+
+Step 4) switch back to *feature_1* and merge the new fix then reapply the stash
+
+{% highlight bash %}
+git checkout feature_1
+git merge master
+git stash apply
+{% endhighlight %}
+
+
+Note that depending on the details of your situation, it might have been better
+to merge the hotfix branch instead of master. 
 
 References:
 - Git for scientists - <http://gureckislab.org/pages/GitTutorial/>
